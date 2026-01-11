@@ -15,6 +15,7 @@
             font-family: 'Georgia', serif;
             color: #2c3e50;
             line-height: 1.6;
+            background: #f5f5f5;
         }
 
         /* Navigation */
@@ -48,10 +49,16 @@
             color: #2c3e50;
             font-weight: 500;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
             color: #c17a6f;
+        }
+
+        .nav-links a.active {
+            color: #c17a6f;
+            font-weight: bold;
         }
 
         .btn-primary {
@@ -73,6 +80,7 @@
         /* Page Container */
         .page-container {
             display: none;
+            min-height: calc(100vh - 200px);
         }
 
         .page-container.active {
@@ -101,255 +109,75 @@
             margin-right: auto;
         }
 
-        /* Mission Section */
-        .mission {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+        /* Dashboard */
+        .dashboard {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
         }
 
-        .mission h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #c17a6f;
-        }
-
-        .mission p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-card h3 {
-            color: #c17a6f;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            background: #f9f9f9;
-            padding: 5rem 5%;
-        }
-
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .step {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #c17a6f;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        .step h3 {
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        /* Browse Profiles Teaser */
-        .browse-section {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .browse-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-
-        .profile-info {
-            padding: 1.5rem;
-        }
-
-        .profile-info h3 {
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .profile-info p {
-            color: #777;
-            margin-bottom: 1rem;
-        }
-
-        .profile-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: #f5e6e0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            color: #c17a6f;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #c17a6f 0%, #a66960 100%);
-            color: white;
-            padding: 5rem 5%;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #c17a6f;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: #f5e6e0;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
+        .dashboard-header {
+            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
             padding: 3rem;
             border-radius: 15px;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
+            margin-bottom: 2rem;
         }
 
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .modal h2 {
-            margin-bottom: 1.5rem;
+        .dashboard-header h1 {
+            font-size: 2.5rem;
             color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .card h2 {
+            color: #c17a6f;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Profile Page */
+        .profile-page {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .profile-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .profile-section h2 {
+            color: #c17a6f;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f5e6e0;
+            padding-bottom: 0.5rem;
         }
 
         .form-group {
@@ -382,101 +210,10 @@
             border-color: #c17a6f;
         }
 
-        .modal-footer {
-            margin-top: 1rem;
-            text-align: center;
-            color: #777;
-        }
-
-        .modal-footer a {
-            color: #c17a6f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .modal-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Profile Page Styles */
-        .profile-page {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem 5%;
-        }
-
-        .profile-header {
-            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .profile-header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-header p {
-            color: #555;
-            font-size: 1.1rem;
-        }
-
-        .profile-photo-section {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .profile-photo-placeholder {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-        }
-
-        .upload-btn {
-            background: #c17a6f;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .upload-btn:hover {
-            background: #a66960;
-        }
-
-        .profile-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .profile-section h2 {
-            color: #c17a6f;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #f5e6e0;
-            padding-bottom: 0.5rem;
-        }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin-bottom: 1.5rem;
         }
 
         .char-count {
@@ -504,38 +241,101 @@
             cursor: pointer;
         }
 
-        .save-profile-btn {
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: #c17a6f;
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
         }
 
-        .save-profile-btn:hover {
-            background: #a66960;
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 450px;
+            width: 90%;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal h2 {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .modal-footer {
+            margin-top: 1rem;
+            text-align: center;
+            color: #777;
+        }
+
+        .modal-footer a {
+            color: #c17a6f;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .tag {
+            background: #f5e6e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #c17a6f;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-display {
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #c17a6f;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            color: #555;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .interests-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -543,230 +343,251 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo" onclick="showHome()">Forever Together</div>
-        <div class="nav-links">
-            <a href="#" onclick="showHome()">Home</a>
-            <a href="#" id="profileLink" style="display: none;" onclick="showProfile()">My Profile</a>
-            <a href="#" class="btn-primary" id="authBtn" onclick="showLogin(event)">Sign In</a>
+        <div class="logo" onclick="goHome()">Forever Together</div>
+        <div class="nav-links" id="navLinks">
+            <!-- Will be populated by JavaScript -->
         </div>
     </nav>
 
-    <!-- HOME PAGE -->
+    <!-- HOME PAGE (Not logged in) -->
     <div class="page-container active" id="homePage">
-        <!-- Hero Section -->
         <section class="hero">
             <h1>Build the Family You've Always Dreamed Of</h1>
             <p>Connect with like-minded individuals who share your values and vision for a meaningful, lasting partnership leading to marriage.</p>
-            <a href="#browse" class="btn-primary">Start Your Journey</a>
+            <button class="btn-primary" onclick="showLogin()">Start Your Journey</button>
         </section>
-
-        <!-- Mission Section -->
-        <section class="mission" id="mission">
-            <h2>Our Mission</h2>
-            <p>In a world that often prioritizes the temporary, we're building a community focused on what truly matters: genuine connection, shared values, and the timeless goal of building a family together.</p>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>💍 Marriage-Minded</h3>
-                    <p>Every member here is serious about finding a life partner and building a future together.</p>
-                </div>
-                <div class="value-card">
-                    <h3>🏡 Family-Focused</h3>
-                    <p>We believe in the beauty of commitment and the joy of creating a loving family.</p>
-                </div>
-                <div class="value-card">
-                    <h3>❤️ Authentic Values</h3>
-                    <p>Connect with people who share your commitment to lasting relationships and traditional values.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="how-it-works" id="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Profile</h3>
-                    <p>Share your values, goals, and what you're looking for in a life partner.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Browse & Get Matched</h3>
-                    <p>Explore profiles or let our algorithm suggest compatible matches based on your values.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Connect Meaningfully</h3>
-                    <p>Start conversations with intention and build a genuine connection.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Build Your Future</h3>
-                    <p>Take your relationship offline and work toward your shared goal of marriage and family.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Browse Profiles Section -->
-        <section class="browse-section" id="browse">
-            <h2>Meet People Ready for Forever</h2>
-            <div class="profile-grid">
-                <div class="profile-card" onclick="showLogin(event)">
-                    <div class="profile-img">👨</div>
-                    <div class="profile-info">
-                        <h3>Michael, 28</h3>
-                        <p>Software Engineer | Los Angeles, CA</p>
-                        <div class="profile-tags">
-                            <span class="tag">Family-oriented</span>
-                            <span class="tag">Active lifestyle</span>
-                            <span class="tag">Faith-driven</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-card" onclick="showLogin(event)">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Sarah, 26</h3>
-                        <p>Teacher | Austin, TX</p>
-                        <div class="profile-tags">
-                            <span class="tag">Traditional values</span>
-                            <span class="tag">Loves cooking</span>
-                            <span class="tag">Outdoorsy</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-card" onclick="showLogin(event)">
-                    <div class="profile-img">👨</div>
-                    <div class="profile-info">
-                        <h3>David, 30</h3>
-                        <p>Accountant | Chicago, IL</p>
-                        <div class="profile-tags">
-                            <span class="tag">Family first</span>
-                            <span class="tag">Musician</span>
-                            <span class="tag">Community-minded</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-card" onclick="showLogin(event)">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Emma, 27</h3>
-                        <p>Nurse | Seattle, WA</p>
-                        <div class="profile-tags">
-                            <span class="tag">Caring</span>
-                            <span class="tag">Book lover</span>
-                            <span class="tag">Wants children</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <h2>Ready to Find Your Forever?</h2>
-            <p>Join thousands of marriage-minded individuals who are serious about building a future together.</p>
-            <a href="#" class="btn-secondary" onclick="showLogin(event)">Get Started Today</a>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Forever Together. Building families, one connection at a time.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">Privacy Policy | Terms of Service | Contact Us</p>
-        </footer>
     </div>
 
-    <!-- PROFILE PAGE -->
-    <div class="page-container" id="profilePage">
+    <!-- DASHBOARD (Logged in) -->
+    <div class="page-container" id="dashboardPage">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h1 id="welcomeMessage">Welcome back!</h1>
+                <p>Complete your profile to start finding matches</p>
+            </div>
+            <div class="card">
+                <h2>Get Started</h2>
+                <p>Fill out your profile to begin your journey to finding your life partner.</p>
+                <button class="btn-primary" onclick="showPage('editProfile')" style="margin-top: 1rem;">Complete Your Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW PROFILE PAGE -->
+    <div class="page-container" id="viewProfilePage">
         <div class="profile-page">
             <div class="profile-header">
-                <h1>Create Your Profile</h1>
-                <p>Share who you are and what you're looking for in a life partner</p>
+                <h1>My Profile</h1>
+                <p>This is how others see you on Forever Together</p>
+            </div>
+            <div id="profileDisplay">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            <button class="btn-primary" onclick="showPage('editProfile')" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Edit Profile</button>
+        </div>
+    </div>
+
+    <!-- EDIT PROFILE PAGE -->
+    <div class="page-container" id="editProfilePage">
+        <div class="profile-page">
+            <div class="profile-header">
+                <h1>Edit Your Profile</h1>
+                <p>Share who you are and what you're looking for</p>
             </div>
 
-            <!-- Photo Section -->
-            <div class="profile-section">
-                <h2>Profile Photo</h2>
-                <div class="profile-photo-section">
-                    <div class="profile-photo-placeholder">📷</div>
-                    <button class="upload-btn">Upload Photo</button>
-                    <p style="margin-top: 0.5rem; color: #999; font-size: 0.9rem;">Choose a clear, recent photo of yourself</p>
+            <form id="profileForm">
+                <!-- Basic Information -->
+                <div class="profile-section">
+                    <h2>Basic Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age *</label>
+                            <input type="number" id="age" required min="18" max="100">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <select id="gender" required>
+                                <option value="">Select...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation *</label>
+                            <input type="text" id="occupation" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label>State/Region *</label>
+                            <input type="text" id="state" required>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Basic Information -->
-            <div class="profile-section">
-                <h2>Basic Information</h2>
-                <div class="form-row">
+                <!-- About You -->
+                <div class="profile-section">
+                    <h2>About You</h2>
                     <div class="form-group">
-                        <label>First Name *</label>
-                        <input type="text" required placeholder="Enter your first name">
-                    </div>
-                    <div class="form-group">
-                        <label>Age *</label>
-                        <input type="number" required placeholder="Your age" min="18" max="100">
+                        <label>Bio *</label>
+                        <textarea id="bio" maxlength="500" required oninput="updateCharCount('bio', 'bioCount')"></textarea>
+                        <div class="char-count"><span id="bioCount">0</span>/500</div>
                     </div>
                 </div>
-                <div class="form-row">
+
+                <!-- Values & Beliefs -->
+                <div class="profile-section">
+                    <h2>Values & Beliefs</h2>
                     <div class="form-group">
-                        <label>Gender *</label>
-                        <select required>
+                        <label>Faith/Religion *</label>
+                        <select id="faith" required>
                             <option value="">Select...</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="christian">Christian</option>
+                            <option value="catholic">Catholic</option>
+                            <option value="jewish">Jewish</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="buddhist">Buddhist</option>
+                            <option value="spiritual">Spiritual</option>
+                            <option value="agnostic">Agnostic</option>
+                            <option value="atheist">Atheist</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Occupation *</label>
-                        <input type="text" required placeholder="What do you do?">
+                        <label>Importance of Faith *</label>
+                        <select id="faithImportance" required>
+                            <option value="">Select...</option>
+                            <option value="very">Very important</option>
+                            <option value="somewhat">Somewhat important</option>
+                            <option value="not_very">Not very important</option>
+                            <option value="not_at_all">Not important</option>
+                        </select>
                     </div>
-                </div>
-                <div class="form-row">
                     <div class="form-group">
-                        <label>City *</label>
-                        <input type="text" required placeholder="Your city">
+                        <label>Core Values</label>
+                        <textarea id="coreValues" maxlength="300" oninput="updateCharCount('coreValues', 'valuesCount')"></textarea>
+                        <div class="char-count"><span id="valuesCount">0</span>/300</div>
+                    </div>
+                </div>
+
+                <!-- Family Goals -->
+                <div class="profile-section">
+                    <h2>Family Goals</h2>
+                    <div class="form-group">
+                        <label>Do you want children? *</label>
+                        <select id="wantChildren" required>
+                            <option value="">Select...</option>
+                            <option value="definitely">Definitely want children</option>
+                            <option value="probably">Probably want children</option>
+                            <option value="undecided">Undecided</option>
+                            <option value="probably_not">Probably don't want</option>
+                            <option value="definitely_not">Definitely don't want</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>State/Region *</label>
-                        <input type="text" required placeholder="Your state or region">
+                        <label>Ideal number of children</label>
+                        <input type="number" id="idealChildren" min="0" max="20">
+                    </div>
+                    <div class="form-group">
+                        <label>Vision for family life</label>
+                        <textarea id="familyVision" maxlength="400" oninput="updateCharCount('familyVision', 'familyCount')"></textarea>
+                        <div class="char-count"><span id="familyCount">0</span>/400</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- About You -->
-            <div class="profile-section">
-                <h2>About You</h2>
-                <div class="form-group">
-                    <label>Bio - Tell us about yourself *</label>
-                    <textarea id="bioText" maxlength="500" placeholder="Share your story, values, passions, and what makes you who you are..." oninput="updateCharCount('bioText', 'bioCount')"></textarea>
-                    <div class="char-count"><span id="dealbreakersCount">0</span>/300 characters</div>
+                <!-- Interests -->
+                <div class="profile-section">
+                    <h2>Interests & Hobbies</h2>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <input type="checkbox" id="reading" value="Reading">
+                            <label for="reading">Reading</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="cooking" value="Cooking">
+                            <label for="cooking">Cooking</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="fitness" value="Fitness">
+                            <label for="fitness">Fitness/Sports</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="music" value="Music">
+                            <label for="music">Music</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="outdoors" value="Outdoors">
+                            <label for="outdoors">Outdoors</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="travel" value="Travel">
+                            <label for="travel">Travel</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="arts" value="Arts">
+                            <label for="arts">Arts & Crafts</label>
+                        </div>
+                        <div class="interest-item">
+                            <input type="checkbox" id="volunteering" value="Volunteering">
+                            <label for="volunteering">Volunteering</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Save Button -->
-            <button class="save-profile-btn" onclick="saveProfile()">Save Profile</button>
+                <!-- What You're Looking For -->
+                <div class="profile-section">
+                    <h2>What You're Looking For</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preferred age range *</label>
+                            <input type="text" id="ageRange" required placeholder="e.g., 25-35">
+                        </div>
+                        <div class="form-group">
+                            <label>Maximum distance (miles)</label>
+                            <input type="number" id="maxDistance" min="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Important qualities in a partner *</label>
+                        <textarea id="partnerQualities" maxlength="400" required oninput="updateCharCount('partnerQualities', 'qualitiesCount')"></textarea>
+                        <div class="char-count"><span id="qualitiesCount">0</span>/400</div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Save Profile</button>
+            </form>
         </div>
     </div>
 
     <!-- Login Modal -->
     <div class="modal" id="loginModal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeLogin()">&times;</span>
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
             <h2>Welcome Back</h2>
-            <form onsubmit="handleLogin(event)">
+            <form id="loginForm">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" required placeholder="your@email.com">
+                    <input type="email" id="loginEmail" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" required placeholder="Enter your password">
+                    <input type="password" id="loginPassword" required>
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%;">Sign In</button>
             </form>
             <div class="modal-footer">
-                Don't have an account yet? <a href="#" onclick="showRegister(event)">You can make one here.</a>
+                Don't have an account yet? <a onclick="showRegister()">You can make one here.</a>
             </div>
         </div>
     </div>
@@ -774,272 +595,387 @@
     <!-- Register Modal -->
     <div class="modal" id="registerModal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeRegister()">&times;</span>
+            <span class="close-modal" onclick="closeModal('registerModal')">&times;</span>
             <h2>Start Your Journey</h2>
-            <form onsubmit="handleRegister(event)">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" required placeholder="John Doe">
-                </div>
+            <form id="registerForm">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" required placeholder="your@email.com">
+                    <input type="email" id="registerEmail" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" required placeholder="Create a password">
+                    <input type="password" id="registerPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" required minlength="6">
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%;">Create Account</button>
             </form>
             <div class="modal-footer">
-                Already have an account? <a href="#" onclick="showLogin(event)">Sign in here.</a>
+                Already have an account? <a onclick="showLogin()">Sign in here.</a>
             </div>
         </div>
     </div>
 
     <script>
-        let isLoggedIn = false;
-
-        function showHome() {
-            document.getElementById('homePage').classList.add('active');
-            document.getElementById('profilePage').classList.remove('active');
+        // Initialize LocalStorage structure
+        function initializeStorage() {
+            if (!localStorage.getItem('users')) {
+                localStorage.setItem('users', JSON.stringify({}));
+            }
         }
 
-        function showProfile() {
-            if (!isLoggedIn) {
-                showLogin(event);
+        // Check if user is logged in
+        function checkAuth() {
+            const currentUser = localStorage.getItem('currentUser');
+            updateNavigation(currentUser);
+            return currentUser;
+        }
+
+        // Update navigation based on auth status
+        function updateNavigation(userEmail) {
+            const navLinks = document.getElementById('navLinks');
+            
+            if (userEmail) {
+                navLinks.innerHTML = `
+                    <a onclick="showPage('dashboard')" class="active">Dashboard</a>
+                    <a onclick="showPage('viewProfile')">My Profile</a>
+                    <a href="#" class="btn-primary" onclick="logout()">Sign Out</a>
+                `;
+                
+                // Show dashboard, hide home
+                document.getElementById('homePage').classList.remove('active');
+                document.getElementById('dashboardPage').classList.add('active');
+                
+                // Update welcome message
+                const users = JSON.parse(localStorage.getItem('users'));
+                const user = users[userEmail];
+                if (user && user.profile && user.profile.firstName) {
+                    document.getElementById('welcomeMessage').textContent = `Welcome back, ${user.profile.firstName}! 👋`;
+                }
+            } else {
+                navLinks.innerHTML = `
+                    <a href="#" class="btn-primary" onclick="showLogin()">Sign In</a>
+                `;
+                
+                // Show home, hide dashboard
+                document.getElementById('dashboardPage').classList.remove('active');
+                document.getElementById('homePage').classList.add('active');
+            }
+        }
+
+        // Show page
+        function showPage(page) {
+            document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
+            
+            if (page === 'dashboard') {
+                document.getElementById('dashboardPage').classList.add('active');
+            } else if (page === 'viewProfile') {
+                loadProfileView();
+                document.getElementById('viewProfilePage').classList.add('active');
+            } else if (page === 'editProfile') {
+                loadProfileEdit();
+                document.getElementById('editProfilePage').classList.add('active');
+            }
+        }
+
+        // Go home
+        function goHome() {
+            const currentUser = checkAuth();
+            if (currentUser) {
+                showPage('dashboard');
+            } else {
+                document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
+                document.getElementById('homePage').classList.add('active');
+            }
+        }
+
+        // Modal functions
+        function showLogin() {
+            closeModal('registerModal');
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function showRegister() {
+            closeModal('loginModal');
+            document.getElementById('registerModal').classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Register
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirm) {
+                alert('Passwords do not match!');
                 return;
             }
-            document.getElementById('homePage').classList.remove('active');
-            document.getElementById('profilePage').classList.add('active');
-            window.scrollTo(0, 0);
-        }
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            
+            if (users[email]) {
+                alert('Email already registered!');
+                return;
+            }
+            
+            users[email] = {
+                password: password,
+                profile: {}
+            };
+            
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('currentUser', email);
+            
+            closeModal('registerModal');
+            checkAuth();
+            showPage('editProfile');
+        });
 
-        function showLogin(e) {
+        // Login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('loginModal').classList.add('active');
-            document.getElementById('registerModal').classList.remove('active');
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            
+            if (!users[email]) {
+                alert('Email not found!');
+                return;
+            }
+            
+            if (users[email].password !== password) {
+                alert('Incorrect password!');
+                return;
+            }
+            
+            localStorage.setItem('currentUser', email);
+            closeModal('loginModal');
+            checkAuth();
+            showPage('dashboard');
+        });
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('currentUser');
+            checkAuth();
+            goHome();
         }
 
-        function closeLogin() {
-            document.getElementById('loginModal').classList.remove('active');
+        // Load profile for editing
+        function loadProfileEdit() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) return;
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            const profile = users[currentUser].profile || {};
+            
+            // Populate form
+            document.getElementById('firstName').value = profile.firstName || '';
+            document.getElementById('age').value = profile.age || '';
+            document.getElementById('gender').value = profile.gender || '';
+            document.getElementById('occupation').value = profile.occupation || '';
+            document.getElementById('city').value = profile.city || '';
+            document.getElementById('state').value = profile.state || '';
+            document.getElementById('bio').value = profile.bio || '';
+            document.getElementById('faith').value = profile.faith || '';
+            document.getElementById('faithImportance').value = profile.faithImportance || '';
+            document.getElementById('coreValues').value = profile.coreValues || '';
+            document.getElementById('wantChildren').value = profile.wantChildren || '';
+            document.getElementById('idealChildren').value = profile.idealChildren || '';
+            document.getElementById('familyVision').value = profile.familyVision || '';
+            document.getElementById('ageRange').value = profile.ageRange || '';
+            document.getElementById('maxDistance').value = profile.maxDistance || '';
+            document.getElementById('partnerQualities').value = profile.partnerQualities || '';
+            
+            // Update char counts
+            updateCharCount('bio', 'bioCount');
+            updateCharCount('coreValues', 'valuesCount');
+            updateCharCount('familyVision', 'familyCount');
+            updateCharCount('partnerQualities', 'qualitiesCount');
+            
+            // Load interests
+            if (profile.interests) {
+                profile.interests.forEach(interest => {
+                    const checkbox = document.querySelector(`input[value="${interest}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            }
         }
 
-        function showRegister(e) {
+        // Save profile
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('registerModal').classList.add('active');
-            document.getElementById('loginModal').classList.remove('active');
+            
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) return;
+            
+            // Get all interests
+            const interests = [];
+            document.querySelectorAll('.interest-item input:checked').forEach(cb => {
+                interests.push(cb.value);
+            });
+            
+            const profile = {
+                firstName: document.getElementById('firstName').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                occupation: document.getElementById('occupation').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                bio: document.getElementById('bio').value,
+                faith: document.getElementById('faith').value,
+                faithImportance: document.getElementById('faithImportance').value,
+                coreValues: document.getElementById('coreValues').value,
+                wantChildren: document.getElementById('wantChildren').value,
+                idealChildren: document.getElementById('idealChildren').value,
+                familyVision: document.getElementById('familyVision').value,
+                interests: interests,
+                ageRange: document.getElementById('ageRange').value,
+                maxDistance: document.getElementById('maxDistance').value,
+                partnerQualities: document.getElementById('partnerQualities').value
+            };
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            users[currentUser].profile = profile;
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            alert('Profile saved successfully!');
+            showPage('viewProfile');
+        });
+
+        // Load profile view
+        function loadProfileView() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) return;
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            const profile = users[currentUser].profile || {};
+            
+            let html = '';
+            
+            if (!profile.firstName) {
+                html = '<div class="card"><h2>No Profile Yet</h2><p>Click "Edit Profile" to get started!</p></div>';
+            } else {
+                html = `
+                    <div class="profile-section">
+                        <h2>About Me</h2>
+                        <div class="info-display">
+                            <div class="info-label">Name</div>
+                            <div class="info-value">${profile.firstName}, ${profile.age}</div>
+                        </div>
+                        <div class="info-display">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">${profile.city}, ${profile.state}</div>
+                        </div>
+                        <div class="info-display">
+                            <div class="info-label">Occupation</div>
+                            <div class="info-value">${profile.occupation}</div>
+                        </div>
+                        <div class="info-display">
+                            <div class="info-label">Bio</div>
+                            <div class="info-value">${profile.bio}</div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>Values & Beliefs</h2>
+                        <div class="info-display">
+                            <div class="info-label">Faith</div>
+                            <div class="info-value">${profile.faith}</div>
+                        </div>
+                        <div class="info-display">
+                            <div class="info-label">Importance of Faith</div>
+                            <div class="info-value">${profile.faithImportance}</div>
+                        </div>
+                        ${profile.coreValues ? `
+                        <div class="info-display">
+                            <div class="info-label">Core Values</div>
+                            <div class="info-value">${profile.coreValues}</div>
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>Family Goals</h2>
+                        <div class="info-display">
+                            <div class="info-label">Want Children</div>
+                            <div class="info-value">${profile.wantChildren}</div>
+                        </div>
+                        ${profile.idealChildren ? `
+                        <div class="info-display">
+                            <div class="info-label">Ideal Number of Children</div>
+                            <div class="info-value">${profile.idealChildren}</div>
+                        </div>
+                        ` : ''}
+                        ${profile.familyVision ? `
+                        <div class="info-display">
+                            <div class="info-label">Vision for Family Life</div>
+                            <div class="info-value">${profile.familyVision}</div>
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    ${profile.interests && profile.interests.length > 0 ? `
+                    <div class="profile-section">
+                        <h2>Interests & Hobbies</h2>
+                        <div>
+                            ${profile.interests.map(interest => `<span class="tag">${interest}</span>`).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="profile-section">
+                        <h2>What I'm Looking For</h2>
+                        <div class="info-display">
+                            <div class="info-label">Preferred Age Range</div>
+                            <div class="info-value">${profile.ageRange}</div>
+                        </div>
+                        ${profile.maxDistance ? `
+                        <div class="info-display">
+                            <div class="info-label">Maximum Distance</div>
+                            <div class="info-value">${profile.maxDistance} miles</div>
+                        </div>
+                        ` : ''}
+                        <div class="info-display">
+                            <div class="info-label">Important Qualities in a Partner</div>
+                            <div class="info-value">${profile.partnerQualities}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('profileDisplay').innerHTML = html;
         }
 
-        function closeRegister() {
-            document.getElementById('registerModal').classList.remove('active');
-        }
-
-        function handleLogin(e) {
-            e.preventDefault();
-            // Simulate login
-            isLoggedIn = true;
-            closeLogin();
-            
-            // Update UI for logged-in state
-            document.getElementById('authBtn').textContent = 'Sign Out';
-            document.getElementById('authBtn').onclick = handleLogout;
-            document.getElementById('profileLink').style.display = 'block';
-            
-            // Show profile page
-            showProfile();
-        }
-
-        function handleRegister(e) {
-            e.preventDefault();
-            // Simulate registration
-            isLoggedIn = true;
-            closeRegister();
-            
-            // Update UI for logged-in state
-            document.getElementById('authBtn').textContent = 'Sign Out';
-            document.getElementById('authBtn').onclick = handleLogout;
-            document.getElementById('profileLink').style.display = 'block';
-            
-            // Show profile page
-            showProfile();
-        }
-
-        function handleLogout(e) {
-            e.preventDefault();
-            isLoggedIn = false;
-            
-            // Reset UI
-            document.getElementById('authBtn').textContent = 'Sign In';
-            document.getElementById('authBtn').onclick = showLogin;
-            document.getElementById('profileLink').style.display = 'none';
-            
-            // Go back to home
-            showHome();
-        }
-
+        // Character count update
         function updateCharCount(textareaId, countId) {
             const textarea = document.getElementById(textareaId);
             const count = document.getElementById(countId);
-            count.textContent = textarea.value.length;
+            if (textarea && count) {
+                count.textContent = textarea.value.length;
+            }
         }
 
-        function saveProfile() {
-            alert('Profile saved! In a real application, this would save your data to a database.');
-        }
-
-        // Close modal when clicking outside
+        // Close modals when clicking outside
         window.onclick = function(event) {
-            const loginModal = document.getElementById('loginModal');
-            const registerModal = document.getElementById('registerModal');
-            if (event.target === loginModal) {
-                closeLogin();
-            }
-            if (event.target === registerModal) {
-                closeRegister();
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
             }
         }
+
+        // Initialize on page load
+        initializeStorage();
+        checkAuth();
     </script>
 </body>
-</html>-count"><span id="bioCount">0</span>/500 characters</div>
-                </div>
-            </div>
-
-            <!-- Values & Beliefs -->
-            <div class="profile-section">
-                <h2>Values & Beliefs</h2>
-                <div class="form-group">
-                    <label>Faith/Religion *</label>
-                    <select required>
-                        <option value="">Select...</option>
-                        <option value="christian">Christian</option>
-                        <option value="catholic">Catholic</option>
-                        <option value="jewish">Jewish</option>
-                        <option value="muslim">Muslim</option>
-                        <option value="hindu">Hindu</option>
-                        <option value="buddhist">Buddhist</option>
-                        <option value="spiritual">Spiritual but not religious</option>
-                        <option value="agnostic">Agnostic</option>
-                        <option value="atheist">Atheist</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>How important is faith in your daily life? *</label>
-                    <select required>
-                        <option value="">Select...</option>
-                        <option value="very">Very important</option>
-                        <option value="somewhat">Somewhat important</option>
-                        <option value="not_very">Not very important</option>
-                        <option value="not_at_all">Not important at all</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Your core values</label>
-                    <textarea id="valuesText" maxlength="300" placeholder="What principles guide your life? (e.g., honesty, loyalty, family, faith, hard work)" oninput="updateCharCount('valuesText', 'valuesCount')"></textarea>
-                    <div class="char-count"><span id="valuesCount">0</span>/300 characters</div>
-                </div>
-            </div>
-
-            <!-- Family Goals -->
-            <div class="profile-section">
-                <h2>Family Goals</h2>
-                <div class="form-group">
-                    <label>Do you want children? *</label>
-                    <select required>
-                        <option value="">Select...</option>
-                        <option value="definitely">Definitely want children</option>
-                        <option value="probably">Probably want children</option>
-                        <option value="undecided">Undecided</option>
-                        <option value="probably_not">Probably don't want children</option>
-                        <option value="definitely_not">Definitely don't want children</option>
-                        <option value="have_children">Already have children</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Ideal number of children</label>
-                    <input type="number" placeholder="How many children would you like?" min="0" max="20">
-                </div>
-                <div class="form-group">
-                    <label>Your vision for family life</label>
-                    <textarea id="familyText" maxlength="400" placeholder="Describe your dream family life and what family means to you..." oninput="updateCharCount('familyText', 'familyCount')"></textarea>
-                    <div class="char-count"><span id="familyCount">0</span>/400 characters</div>
-                </div>
-            </div>
-
-            <!-- Lifestyle -->
-            <div class="profile-section">
-                <h2>Lifestyle & Interests</h2>
-                <div class="form-group">
-                    <label>What are your interests and hobbies?</label>
-                    <div class="interests-grid">
-                        <div class="interest-item">
-                            <input type="checkbox" id="reading">
-                            <label for="reading">Reading</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="cooking">
-                            <label for="cooking">Cooking</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="fitness">
-                            <label for="fitness">Fitness/Sports</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="music">
-                            <label for="music">Music</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="outdoors">
-                            <label for="outdoors">Outdoors/Nature</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="travel">
-                            <label for="travel">Travel</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="arts">
-                            <label for="arts">Arts & Crafts</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="volunteering">
-                            <label for="volunteering">Volunteering</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="gardening">
-                            <label for="gardening">Gardening</label>
-                        </div>
-                        <div class="interest-item">
-                            <input type="checkbox" id="gaming">
-                            <label for="gaming">Gaming</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-top: 1.5rem;">
-                    <label>Other hobbies or interests</label>
-                    <input type="text" placeholder="Tell us about other interests not listed above">
-                </div>
-            </div>
-
-            <!-- What You're Looking For -->
-            <div class="profile-section">
-                <h2>What You're Looking For</h2>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Preferred age range *</label>
-                        <input type="text" required placeholder="e.g., 25-35">
-                    </div>
-                    <div class="form-group">
-                        <label>Maximum distance (miles)</label>
-                        <input type="number" placeholder="e.g., 50" min="0">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>What qualities are most important to you in a partner? *</label>
-                    <textarea id="qualitiesText" maxlength="400" required placeholder="Describe the values, traits, and qualities you're looking for in a life partner..." oninput="updateCharCount('qualitiesText', 'qualitiesCount')"></textarea>
-                    <div class="char-count"><span id="qualitiesCount">0</span>/400 characters</div>
-                </div>
-                <div class="form-group">
-                    <label>Dealbreakers (if any)</label>
-                    <textarea id="dealbreakersText" maxlength="300" placeholder="Are there any absolute dealbreakers you want to mention?" oninput="updateCharCount('dealbreakersText', 'dealbreakersCount')"></textarea>
-                    <div class="char
+</html>
