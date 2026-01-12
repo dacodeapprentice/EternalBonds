@@ -77,10 +77,27 @@
             background: #a66960;
         }
 
+        .btn-secondary {
+            background: white;
+            color: #c17a6f;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #f5e6e0;
+        }
+
         /* Page Container */
         .page-container {
             display: none;
-            min-height: calc(100vh - 200px);
         }
 
         .page-container.active {
@@ -109,6 +126,202 @@
             margin-right: auto;
         }
 
+        /* Mission Section */
+        .mission {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: white;
+        }
+
+        .mission h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #c17a6f;
+        }
+
+        .mission p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            color: #c17a6f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #f9f9f9;
+            padding: 5rem 5%;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #c17a6f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        /* Browse Section */
+        .browse-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .browse-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .profile-info {
+            padding: 1.5rem;
+        }
+
+        .profile-info h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .profile-info p {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .profile-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #f5e6e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #c17a6f;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #c17a6f 0%, #a66960 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
         /* Dashboard */
         .dashboard {
             max-width: 1400px;
@@ -129,18 +342,307 @@
             margin-bottom: 0.5rem;
         }
 
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
         .card {
             background: white;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
         }
 
         .card h2 {
             color: #c17a6f;
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
+        }
+
+        .match-card {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .match-card:hover {
+            transform: translateX(5px);
+        }
+
+        .match-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .match-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .match-info p {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-item {
+            padding: 1rem;
+            border-left: 3px solid #c17a6f;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+        }
+
+        .activity-item strong {
+            color: #c17a6f;
+        }
+
+        .activity-time {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        /* Browse Page */
+        .browse-page {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .browse-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .browse-header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.7rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .profile-bio {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-like,
+        .btn-message {
+            flex: 1;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-like {
+            background: #c17a6f;
+            color: white;
+        }
+
+        .btn-like:hover {
+            background: #a66960;
+        }
+
+        .btn-message {
+            background: white;
+            color: #c17a6f;
+            border: 2px solid #c17a6f;
+        }
+
+        .btn-message:hover {
+            background: #f5e6e0;
+        }
+
+        /* Messages Page */
+        .messages-page {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .messages-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 600px;
+        }
+
+        .conversations-list {
+            border-right: 2px solid #f0f0f0;
+            overflow-y: auto;
+        }
+
+        .conversation-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .conversation-item:hover,
+        .conversation-item.active {
+            background: #f5e6e0;
+        }
+
+        .conversation-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .conversation-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .conversation-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .conversation-preview {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .chat-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            background: #f9f9f9;
+        }
+
+        .chat-header h2 {
+            color: #2c3e50;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 1.5rem;
+            max-width: 70%;
+        }
+
+        .message.sent {
+            margin-left: auto;
+        }
+
+        .message-bubble {
+            padding: 1rem;
+            border-radius: 15px;
+            margin-bottom: 0.3rem;
+        }
+
+        .message.sent .message-bubble {
+            background: #c17a6f;
+            color: white;
+        }
+
+        .message.received .message-bubble {
+            background: #f0f0f0;
+            color: #2c3e50;
+        }
+
+        .message-time {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .chat-input {
+            padding: 1.5rem;
+            border-top: 2px solid #f0f0f0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        .chat-input button {
+            padding: 0.8rem 2rem;
+            background: #c17a6f;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
         }
 
         /* Profile Page */
@@ -301,17 +803,6 @@
             text-decoration: underline;
         }
 
-        .tag {
-            background: #f5e6e0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            color: #c17a6f;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
         .info-display {
             padding: 1rem;
             background: #f9f9f9;
@@ -329,6 +820,20 @@
             color: #555;
         }
 
+        @media (max-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .messages-container {
+                grid-template-columns: 1fr;
+            }
+
+            .conversations-list {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .form-row {
                 grid-template-columns: 1fr;
@@ -336,6 +841,10 @@
 
             .hero h1 {
                 font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
             }
         }
     </style>
@@ -354,8 +863,119 @@
         <section class="hero">
             <h1>Build the Family You've Always Dreamed Of</h1>
             <p>Connect with like-minded individuals who share your values and vision for a meaningful, lasting partnership leading to marriage.</p>
-            <button class="btn-primary" onclick="showLogin()">Start Your Journey</button>
+            <button class="btn-primary" onclick="scrollToBrowse()">Start Your Journey</button>
         </section>
+
+        <section class="mission" id="mission">
+            <h2>Our Mission</h2>
+            <p>In a world that often prioritizes the temporary, we're building a community focused on what truly matters: genuine connection, shared values, and the timeless goal of building a family together.</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>💍 Marriage-Minded</h3>
+                    <p>Every member here is serious about finding a life partner and building a future together.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🏡 Family-Focused</h3>
+                    <p>We believe in the beauty of commitment and the joy of creating a loving family.</p>
+                </div>
+                <div class="value-card">
+                    <h3>❤️ Authentic Values</h3>
+                    <p>Connect with people who share your commitment to lasting relationships and traditional values.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Profile</h3>
+                    <p>Share your values, goals, and what you're looking for in a life partner.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Browse & Get Matched</h3>
+                    <p>Explore profiles or let our algorithm suggest compatible matches based on your values.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect Meaningfully</h3>
+                    <p>Start conversations with intention and build a genuine connection.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Build Your Future</h3>
+                    <p>Take your relationship offline and work toward your shared goal of marriage and family.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="browse-section" id="browse">
+            <h2>Meet People Ready for Forever</h2>
+            <div class="profile-grid">
+                <div class="profile-card" onclick="showLogin()">
+                    <div class="profile-img">👨</div>
+                    <div class="profile-info">
+                        <h3>Michael, 28</h3>
+                        <p>Software Engineer | Los Angeles, CA</p>
+                        <div class="profile-tags">
+                            <span class="tag">Family-oriented</span>
+                            <span class="tag">Active lifestyle</span>
+                            <span class="tag">Faith-driven</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card" onclick="showLogin()">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Sarah, 26</h3>
+                        <p>Teacher | Austin, TX</p>
+                        <div class="profile-tags">
+                            <span class="tag">Traditional values</span>
+                            <span class="tag">Loves cooking</span>
+                            <span class="tag">Outdoorsy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card" onclick="showLogin()">
+                    <div class="profile-img">👨</div>
+                    <div class="profile-info">
+                        <h3>David, 30</h3>
+                        <p>Accountant | Chicago, IL</p>
+                        <div class="profile-tags">
+                            <span class="tag">Family first</span>
+                            <span class="tag">Musician</span>
+                            <span class="tag">Community-minded</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card" onclick="showLogin()">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Emma, 27</h3>
+                        <p>Nurse | Seattle, WA</p>
+                        <div class="profile-tags">
+                            <span class="tag">Caring</span>
+                            <span class="tag">Book lover</span>
+                            <span class="tag">Wants children</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Find Your Forever?</h2>
+            <p>Join thousands of marriage-minded individuals who are serious about building a future together.</p>
+            <button class="btn-secondary" onclick="showLogin()">Get Started Today</button>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Forever Together. Building families, one connection at a time.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Privacy Policy | Terms of Service | Contact Us</p>
+        </footer>
     </div>
 
     <!-- DASHBOARD (Logged in) -->
@@ -363,12 +983,288 @@
         <div class="dashboard">
             <div class="dashboard-header">
                 <h1 id="welcomeMessage">Welcome back!</h1>
-                <p>Complete your profile to start finding matches</p>
+                <p id="dashboardSubtext">You have new matches waiting</p>
             </div>
-            <div class="card">
-                <h2>Get Started</h2>
-                <p>Fill out your profile to begin your journey to finding your life partner.</p>
-                <button class="btn-primary" onclick="showPage('editProfile')" style="margin-top: 1rem;">Complete Your Profile</button>
+
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h2>Your Matches Today</h2>
+                    <div class="match-card">
+                        <div class="match-avatar">👩</div>
+                        <div class="match-info">
+                            <h3>Emily, 27</h3>
+                            <p>Teacher | Boston, MA | 15 miles away</p>
+                            <div class="profile-tags">
+                                <span class="tag">Traditional values</span>
+                                <span class="tag">Musician</span>
+                                <span class="tag">Outdoorsy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-item">
+                        <strong>Emily</strong> liked your profile
+                        <div class="activity-time">2 hours ago</div>
+                    </div>
+                    <div class="activity-item">
+                        <strong>Jessica</strong> sent you a message
+                        <div class="activity-time">5 hours ago</div>
+                    </div>
+                    <div class="activity-item">
+                        <strong>Rachel</strong> viewed your profile
+                        <div class="activity-time">1 day ago</div>
+                    </div>
+                    <div class="activity-item">
+                        You matched with <strong>Sarah</strong>
+                        <div class="activity-time">2 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BROWSE PAGE -->
+    <div class="page-container" id="browsePage">
+        <div class="browse-page">
+            <div class="browse-header">
+                <h1>Discover Your Match</h1>
+                <p>Filter by your preferences to find compatible partners</p>
+                
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label>Age Range</label>
+                        <select>
+                            <option>22-32</option>
+                            <option>25-35</option>
+                            <option>30-40</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Distance (miles)</label>
+                        <select>
+                            <option>Within 25 miles</option>
+                            <option>Within 50 miles</option>
+                            <option>Within 100 miles</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Faith</label>
+                        <select>
+                            <option>Any</option>
+                            <option>Christian</option>
+                            <option>Catholic</option>
+                            <option>Jewish</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Wants Children</label>
+                        <select>
+                            <option>Any</option>
+                            <option>Definitely</option>
+                            <option>Probably</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Emily, 27</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Teacher | Boston, MA</p>
+                        <p class="profile-bio">Passionate about education and building a loving family. I enjoy reading, hiking, and volunteering at my church.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Family-oriented</span>
+                            <span class="tag">Christian</span>
+                            <span class="tag">Loves reading</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Jessica, 29</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Nurse | Cambridge, MA</p>
+                        <p class="profile-bio">Caring nurse who dreams of having a big family. I love cooking, staying active, and spending time with loved ones.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Wants children</span>
+                            <span class="tag">Active lifestyle</span>
+                            <span class="tag">Catholic</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Rachel, 26</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Marketing Specialist | Boston, MA</p>
+                        <p class="profile-bio">Creative soul with traditional values. I play guitar, love the outdoors, and can't wait to build a family.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Traditional values</span>
+                            <span class="tag">Musician</span>
+                            <span class="tag">Outdoorsy</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Sarah, 28</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Software Developer | Somerville, MA</p>
+                        <p class="profile-bio">Tech professional who values work-life balance and family time. I enjoy board games, baking, and long walks.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Christian</span>
+                            <span class="tag">Home-loving</span>
+                            <span class="tag">Baker</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Amanda, 30</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Physical Therapist | Newton, MA</p>
+                        <p class="profile-bio">Health-focused and family-oriented. I believe in taking care of body and soul. Love yoga and gardening.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Health-conscious</span>
+                            <span class="tag">Gardening</span>
+                            <span class="tag">Family first</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-img">👩</div>
+                    <div class="profile-info">
+                        <h3>Lauren, 25</h3>
+                        <p style="color: #777; margin-bottom: 1rem;">Elementary Teacher | Brookline, MA</p>
+                        <p class="profile-bio">Patient, kind, and ready for forever. Working with kids reminds me how much I want my own family.</p>
+                        <div class="profile-tags">
+                            <span class="tag">Loves children</span>
+                            <span class="tag">Creative</span>
+                            <span class="tag">Catholic</span>
+                        </div>
+                        <div class="profile-actions">
+                            <button class="btn-like">❤️ Like</button>
+                            <button class="btn-message">💬 Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MESSAGES PAGE -->
+    <div class="page-container" id="messagesPage">
+        <div class="messages-page">
+            <h1 style="margin-bottom: 2rem; color: #2c3e50;">Messages</h1>
+            <div class="messages-container">
+                <div class="conversations-list">
+                    <div class="conversation-item active">
+                        <div class="conversation-header">
+                            <div class="conversation-avatar">👩</div>
+                            <div>
+                                <div class="conversation-name">Jessica</div>
+                                <div class="conversation-preview">That sounds wonderful! I'd love to...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation-item">
+                        <div class="conversation-header">
+                            <div class="conversation-avatar">👩</div>
+                            <div>
+                                <div class="conversation-name">Sarah</div>
+                                <div class="conversation-preview">Thanks for the match! How's your...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation-item">
+                        <div class="conversation-header">
+                            <div class="conversation-avatar">👩</div>
+                            <div>
+                                <div class="conversation-name">Amanda</div>
+                                <div class="conversation-preview">I noticed we both love gardening...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <h2>Jessica, 29</h2>
+                        <p style="color: #777; margin-top: 0.3rem;">Nurse | Cambridge, MA</p>
+                    </div>
+                    
+                    <div class="chat-messages">
+                        <div class="message received">
+                            <div class="message-bubble">
+                                Hi! I saw your profile and we seem to have a lot in common. What does your ideal family life look like?
+                            </div>
+                            <div class="message-time">Yesterday, 3:42 PM</div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">
+                                Hi Jessica! I'd love a home filled with warmth and laughter. Probably 3-4 kids, Sunday family dinners, and lots of outdoor activities together. How about you?
+                            </div>
+                            <div class="message-time">Yesterday, 4:15 PM</div>
+                        </div>
+
+                        <div class="message received">
+                            <div class="message-bubble">
+                                That sounds wonderful! I'd love to have a big family too. I imagine teaching them to cook together and creating traditions they'll pass on.
+                            </div>
+                            <div class="message-time">Yesterday, 4:28 PM</div>
+                        </div>
+
+                        <div class="message sent">
+                            <div class="message-bubble">
+                                I love that vision! Would you be interested in meeting for coffee sometime this week?
+                            </div>
+                            <div class="message-time">Today, 9:12 AM</div>
+                        </div>
+
+                        <div class="message received">
+                            <div class="message-bubble">
+                                I'd really like that! I'm free Thursday evening or Saturday afternoon. What works better for you?
+                            </div>
+                            <div class="message-time">Today, 10:05 AM</div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type your message...">
+                        <button>Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -619,7 +1515,7 @@
     </div>
 
     <script>
-        // Initialize LocalStorage structure
+        // Initialize LocalStorage
         function initializeStorage() {
             if (!localStorage.getItem('users')) {
                 localStorage.setItem('users', JSON.stringify({}));
@@ -639,8 +1535,10 @@
             
             if (userEmail) {
                 navLinks.innerHTML = `
-                    <a onclick="showPage('dashboard')" class="active">Dashboard</a>
-                    <a onclick="showPage('viewProfile')">My Profile</a>
+                    <a onclick="showPage('dashboard')" id="navDashboard" class="active">Dashboard</a>
+                    <a onclick="showPage('browse')" id="navBrowse">Browse</a>
+                    <a onclick="showPage('messages')" id="navMessages">Messages <span style="background: #c17a6f; color: white; padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.8rem;">3</span></a>
+                    <a onclick="showPage('viewProfile')" id="navProfile">My Profile</a>
                     <a href="#" class="btn-primary" onclick="logout()">Sign Out</a>
                 `;
                 
@@ -653,9 +1551,15 @@
                 const user = users[userEmail];
                 if (user && user.profile && user.profile.firstName) {
                     document.getElementById('welcomeMessage').textContent = `Welcome back, ${user.profile.firstName}! 👋`;
+                    document.getElementById('dashboardSubtext').textContent = 'You have new matches waiting';
+                } else {
+                    document.getElementById('dashboardSubtext').textContent = 'Complete your profile to start finding matches';
                 }
             } else {
                 navLinks.innerHTML = `
+                    <a href="#mission" onclick="scrollToSection('mission')">Our Mission</a>
+                    <a href="#how-it-works" onclick="scrollToSection('how-it-works')">How It Works</a>
+                    <a href="#browse" onclick="scrollToSection('browse')">Browse</a>
                     <a href="#" class="btn-primary" onclick="showLogin()">Sign In</a>
                 `;
                 
@@ -667,17 +1571,31 @@
 
         // Show page
         function showPage(page) {
+            // Remove active from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            
+            // Hide all pages
             document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
             
             if (page === 'dashboard') {
                 document.getElementById('dashboardPage').classList.add('active');
+                document.getElementById('navDashboard')?.classList.add('active');
+            } else if (page === 'browse') {
+                document.getElementById('browsePage').classList.add('active');
+                document.getElementById('navBrowse')?.classList.add('active');
+            } else if (page === 'messages') {
+                document.getElementById('messagesPage').classList.add('active');
+                document.getElementById('navMessages')?.classList.add('active');
             } else if (page === 'viewProfile') {
                 loadProfileView();
                 document.getElementById('viewProfilePage').classList.add('active');
+                document.getElementById('navProfile')?.classList.add('active');
             } else if (page === 'editProfile') {
                 loadProfileEdit();
                 document.getElementById('editProfilePage').classList.add('active');
             }
+            
+            window.scrollTo(0, 0);
         }
 
         // Go home
@@ -688,6 +1606,22 @@
             } else {
                 document.querySelectorAll('.page-container').forEach(p => p.classList.remove('active'));
                 document.getElementById('homePage').classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Scroll to section (for non-logged in users)
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToBrowse() {
+            const element = document.getElementById('browse');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
@@ -735,6 +1669,7 @@
             localStorage.setItem('currentUser', email);
             
             closeModal('registerModal');
+            document.getElementById('registerForm').reset();
             checkAuth();
             showPage('editProfile');
         });
@@ -760,6 +1695,7 @@
             
             localStorage.setItem('currentUser', email);
             closeModal('loginModal');
+            document.getElementById('loginForm').reset();
             checkAuth();
             showPage('dashboard');
         });
@@ -779,7 +1715,6 @@
             const users = JSON.parse(localStorage.getItem('users'));
             const profile = users[currentUser].profile || {};
             
-            // Populate form
             document.getElementById('firstName').value = profile.firstName || '';
             document.getElementById('age').value = profile.age || '';
             document.getElementById('gender').value = profile.gender || '';
@@ -804,6 +1739,7 @@
             updateCharCount('partnerQualities', 'qualitiesCount');
             
             // Load interests
+            document.querySelectorAll('.interest-item input[type="checkbox"]').forEach(cb => cb.checked = false);
             if (profile.interests) {
                 profile.interests.forEach(interest => {
                     const checkbox = document.querySelector(`input[value="${interest}"]`);
@@ -850,6 +1786,7 @@
             localStorage.setItem('users', JSON.stringify(users));
             
             alert('Profile saved successfully!');
+            checkAuth();
             showPage('viewProfile');
         });
 
@@ -978,4 +1915,29 @@
         checkAuth();
     </script>
 </body>
-</html>
+</html><span class="tag">Family-oriented</span>
+                                <span class="tag">Christian</span>
+                                <span class="tag">Loves reading</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card">
+                        <div class="match-avatar">👩</div>
+                        <div class="match-info">
+                            <h3>Jessica, 29</h3>
+                            <p>Nurse | Cambridge, MA | 8 miles away</p>
+                            <div class="profile-tags">
+                                <span class="tag">Wants children</span>
+                                <span class="tag">Active lifestyle</span>
+                                <span class="tag">Catholic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card">
+                        <div class="match-avatar">👩</div>
+                        <div class="match-info">
+                            <h3>Rachel, 26</h3>
+                            <p>Marketing Specialist | Boston, MA | 12 miles away</p>
+                            <div class="profile-tags">
