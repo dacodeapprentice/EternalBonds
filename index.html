@@ -1,1017 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Together - Build Your Family</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            color: #2c3e50;
-            line-height: 1.6;
-            background: #f5f5f5;
-        }
-
-        /* Navigation */
-        nav {
-            background: #fff;
-            padding: 1.5rem 5%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #c17a6f;
-            cursor: pointer;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 500;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover {
-            color: #c17a6f;
-        }
-
-        .nav-links a.active {
-            color: #c17a6f;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: #c17a6f;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            background: #a66960;
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #c17a6f;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background 0.3s;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background: #f5e6e0;
-        }
-
-        /* Page Container */
-        .page-container {
-            display: none;
-        }
-
-        .page-container.active {
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
-            padding: 6rem 5%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            color: #555;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Mission Section */
-        .mission {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            background: white;
-        }
-
-        .mission h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #c17a6f;
-        }
-
-        .mission p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-card h3 {
-            color: #c17a6f;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            background: #f9f9f9;
-            padding: 5rem 5%;
-        }
-
-        .how-it-works h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .step {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #c17a6f;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        .step h3 {
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        /* Browse Section */
-        .browse-section {
-            padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-        }
-
-        .browse-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
-        .browse-header {
-            background: #f9f9f9;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-        }
-
-        .browse-header h1 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .search-filters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .filter-group label {
-            margin-bottom: 0.5rem;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .filter-group select,
-        .filter-group input {
-            padding: 0.7rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-        }
-
-        .profile-info {
-            padding: 1.5rem;
-        }
-
-        .profile-info h3 {
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .profile-info p {
-            color: #777;
-            margin-bottom: 1rem;
-        }
-
-        .profile-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            background: #f5e6e0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            color: #c17a6f;
-        }
-
-        .profile-bio {
-            color: #555;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .profile-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-like,
-        .btn-message {
-            flex: 1;
-            padding: 0.7rem;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .btn-like {
-            background: #c17a6f;
-            color: white;
-        }
-
-        .btn-like:hover {
-            background: #a66960;
-        }
-
-        .btn-message {
-            background: white;
-            color: #c17a6f;
-            border: 2px solid #c17a6f;
-        }
-
-        .btn-message:hover {
-            background: #f5e6e0;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #c17a6f 0%, #a66960 100%);
-            color: white;
-            padding: 5rem 5%;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        /* Dashboard */
-        .dashboard {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 5%;
-        }
-
-        .dashboard-header {
-            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-        }
-
-        .dashboard-header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .card h2 {
-            color: #c17a6f;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .match-card {
-            display: flex;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .match-card:hover {
-            transform: translateX(5px);
-        }
-
-        .match-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .match-info h3 {
-            color: #2c3e50;
-            margin-bottom: 0.3rem;
-        }
-
-        .match-info p {
-            color: #777;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-item {
-            padding: 1rem;
-            border-left: 3px solid #c17a6f;
-            margin-bottom: 1rem;
-            background: #f9f9f9;
-        }
-
-        .activity-item strong {
-            color: #c17a6f;
-        }
-
-        .activity-time {
-            font-size: 0.85rem;
-            color: #999;
-            margin-top: 0.3rem;
-        }
-
-        /* Messages Page */
-        .messages-page {
-            max-width: 1400px;
-            margin: 2rem auto;
-            padding: 0 5%;
-        }
-
-        .messages-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            height: 600px;
-        }
-
-        .conversations-list {
-            border-right: 2px solid #f0f0f0;
-            overflow-y: auto;
-        }
-
-        .conversation-item {
-            padding: 1.5rem;
-            border-bottom: 1px solid #f0f0f0;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .conversation-item:hover,
-        .conversation-item.active {
-            background: #f5e6e0;
-        }
-
-        .conversation-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .conversation-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d4b5a8 0%, #c17a6f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .conversation-name {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .conversation-preview {
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .chat-area {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-header {
-            padding: 1.5rem;
-            border-bottom: 2px solid #f0f0f0;
-            background: #f9f9f9;
-        }
-
-        .chat-header h2 {
-            color: #2c3e50;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .message {
-            margin-bottom: 1.5rem;
-            max-width: 70%;
-        }
-
-        .message.sent {
-            margin-left: auto;
-        }
-
-        .message-bubble {
-            padding: 1rem;
-            border-radius: 15px;
-            margin-bottom: 0.3rem;
-        }
-
-        .message.sent .message-bubble {
-            background: #c17a6f;
-            color: white;
-        }
-
-        .message.received .message-bubble {
-            background: #f0f0f0;
-            color: #2c3e50;
-        }
-
-        .message-time {
-            font-size: 0.8rem;
-            color: #999;
-        }
-
-        .chat-input {
-            padding: 1.5rem;
-            border-top: 2px solid #f0f0f0;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .chat-input input {
-            flex: 1;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            font-size: 1rem;
-        }
-
-        .chat-input button {
-            padding: 0.8rem 2rem;
-            background: #c17a6f;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Profile Page */
-        .profile-page {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 5%;
-        }
-
-        .profile-header {
-            background: linear-gradient(135deg, #f5e6e0 0%, #d4b5a8 100%);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .profile-header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .profile-section h2 {
-            color: #c17a6f;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #f5e6e0;
-            padding-bottom: 0.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            border-color: #c17a6f;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .char-count {
-            text-align: right;
-            font-size: 0.9rem;
-            color: #999;
-            margin-top: 0.3rem;
-        }
-
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-
-        .interest-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .interest-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .modal h2 {
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-        }
-
-        .modal-footer {
-            margin-top: 1rem;
-            text-align: center;
-            color: #777;
-        }
-
-        .modal-footer a {
-            color: #c17a6f;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .modal-footer a:hover {
-            text-decoration: underline;
-        }
-
-        .info-display {
-            padding: 1rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .info-label {
-            font-weight: bold;
-            color: #c17a6f;
-            margin-bottom: 0.3rem;
-        }
-
-        .info-value {
-            color: #555;
-        }
-
-        @media (max-width: 1024px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .messages-container {
-                grid-template-columns: 1fr;
-            }
-
-            .conversations-list {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .search-filters {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Bonds</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f6f8f6;
+  --white:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --accent:#4CAF50;
+  --soft:#e5ebe5;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+h1,h2,h3{
+  font-family:"Playfair Display",serif;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 1rem;
+}
+
+.hidden{display:none}
+
+/* NAV */
+nav{
+  background:var(--white);
+  border-bottom:1px solid var(--soft);
+  position:sticky;
+  top:0;
+}
+
+.nav{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:1.4rem;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.nav button{
+  background:none;
+  border:none;
+  margin-left:1rem;
+  font-size:.9rem;
+  cursor:pointer;
+  color:var(--text);
+}
+
+.nav button.primary{
+  background:var(--accent);
+  color:white;
+  padding:.4rem 1rem;
+  border-radius:999px;
+}
+
+/* SECTIONS */
+section{
+  padding:4rem 0;
+}
+
+.hero{
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  max-width:520px;
+  margin:0 auto 2rem;
+  color:var(--muted);
+}
+
+.hero button{
+  padding:.9rem 2rem;
+  border:none;
+  border-radius:999px;
+  background:var(--accent);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  gap:1.5rem;
+}
+
+.grid-3{
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.card{
+  background:white;
+  border-radius:1rem;
+  padding:1.5rem;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+footer{
+  background:#1f2937;
+  color:white;
+  text-align:center;
+  padding:2rem;
+  margin-top:4rem;
+}
+
+@media(max-width:700px){
+  .hero h1{font-size:2rem}
+}
+</style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo" onclick="goHome()">Forever Together</div>
-        <div class="nav-links" id="navLinks">
-            <!-- Will be populated by JavaScript -->
-        </div>
-    </nav>
 
-    <!-- MAIN PUBLIC PAGE -->
-    <div class="page-container active" id="mainPage">
-        <section class="hero">
-            <h1>Build the Family You've Always Dreamed Of</h1>
-            <p>Connect with like-minded individuals who share your values and vision for a meaningful, lasting partnership leading to marriage.</p>
-            <button class="btn-primary" onclick="scrollToSection('browse')">Start Your Journey</button>
-        </section>
+<!-- NAV -->
+<nav>
+  <div class="container nav">
+    <div class="logo" onclick="showPage('landing')">Eternal Bonds</div>
+    <div>
+      <button onclick="showPage('success')">Stories</button>
+      <button onclick="showPage('dashboard')">Dashboard</button>
+      <button class="primary" onclick="showPage('landing')">Begin</button>
+    </div>
+  </div>
+</nav>
 
-        <section class="mission" id="mission">
-            <h2>Our Mission</h2>
-            <p>In a world that often prioritizes the temporary, we're building a community focused on what truly matters: genuine connection, shared values, and the timeless goal of building a family together.</p>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>💍 Marriage-Minded</h3>
-                    <p>Every member here is serious about finding a life partner and building a future together.</p>
-                </div>
-                <div class="value-card">
-                    <h3>🏡 Family-Focused</h3>
-                    <p>We believe in the beauty of commitment and the joy of creating a loving family.</p>
-                </div>
-                <div class="value-card">
-                    <h3>❤️ Authentic Values</h3>
-                    <p>Connect with people who share your commitment to lasting relationships and traditional values.</p>
-                </div>
-            </div>
-        </section>
+<!-- LANDING -->
+<section id="landing">
+  <div class="container hero">
+    <h1>Where Love Becomes Family</h1>
+    <p>A quiet place for people who seek commitment, responsibility, and a future together.</p>
+    <button onclick="showPage('dashboard')">Start With Intention</button>
+  </div>
 
-        <section class="how-it-works" id="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Profile</h3>
-                    <p>Share your values, goals, and what you're looking for in a life partner.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Browse & Get Matched</h3>
-                    <p>Explore profiles or let our algorithm suggest compatible matches based on your values.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Connect Meaningfully</h3>
-                    <p>Start conversations with intention and build a genuine connection.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Build Your Future</h3>
-                    <p>Take your relationship offline and work toward your shared goal of marriage and family.</p>
-                </div>
-            </div>
-        </section>
+  <div class="container grid grid-3" style="margin-top:4rem">
+    <div class="card">
+      <h3>Effort-Based</h3>
+      <p>Connection is earned through intention, not swiping.</p>
+    </div>
+    <div class="card">
+      <h3>Verified Community</h3>
+      <p>People here are serious about building a family.</p>
+    </div>
+    <div class="card">
+      <h3>Family-Focused</h3>
+      <p>Values come before appearances.</p>
+    </div>
+  </div>
+</section>
 
-        <section class="browse-section" id="browse">
-            <h2>Meet People Ready for Forever</h2>
-            
-            <div class="browse-header">
-                <h1>Discover Your Match</h1>
-                <p>Filter by your preferences to find compatible partners</p>
-                
-                <div class="search-filters">
-                    <div class="filter-group">
-                        <label>Age Range</label>
-                        <select>
-                            <option>22-32</option>
-                            <option>25-35</option>
-                            <option>30-40</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label>Distance (miles)</label>
-                        <select>
-                            <option>Within 25 miles</option>
-                            <option>Within 50 miles</option>
-                            <option>Within 100 miles</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label>Faith</label>
-                        <select>
-                            <option>Any</option>
-                            <option>Christian</option>
-                            <option>Catholic</option>
-                            <option>Jewish</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label>Wants Children</label>
-                        <select>
-                            <option>Any</option>
-                            <option>Definitely</option>
-                            <option>Probably</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+<!-- DASHBOARD -->
+<section id="dashboard" class="hidden">
+  <div class="container">
+    <h1>Welcome Back</h1>
+    <p class="muted">Your journey continues.</p>
 
-            <div class="profile-grid">
-                <div class="profile-card">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Emily, 27</h3>
-                        <p>Teacher | Boston, MA</p>
-                        <p class="profile-bio">Passionate about education and building a loving family. I enjoy reading, hiking, and volunteering at my church. Looking for someone who shares my faith and family values.</p>
-                        <div class="profile-tags">
-                            <span class="tag">Family-oriented</span>
-                            <span class="tag">Christian</span>
-                            <span class="tag">Loves reading</span>
-                            <span class="tag">Wants 3+ kids</span>
-                        </div>
-                        <div class="profile-actions">
-                            <button class="btn-like" onclick="requireLogin()">❤️ Like</button>
-                            <button class="btn-message" onclick="requireLogin()">💬 Message</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="grid grid-3" style="margin-top:2rem">
+      <div class="card">
+        <h3>Profile</h3>
+        <p>Complete your profile to attract aligned partners.</p>
+      </div>
+      <div class="card">
+        <h3>Matches</h3>
+        <p>Connections based on shared values.</p>
+      </div>
+      <div class="card">
+        <h3>Community</h3>
+        <p>Learn from others building families.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="profile-card">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Jessica, 29</h3>
-                        <p>Nurse | Cambridge, MA</p>
-                        <p class="profile-bio">Caring nurse who dreams of having a big family. I love cooking, staying active, and spending time with loved ones. Faith and family are my top priorities.</p>
-                        <div class="profile-tags">
-                            <span class="tag">Wants children</span>
-                            <span class="tag">Active lifestyle</span>
-                            <span class="tag">Catholic</span>
-                            <span class="tag">Cooking enthusiast</span>
-                        </div>
-                        <div class="profile-actions">
-                            <button class="btn-like" onclick="requireLogin()">❤️ Like</button>
-                            <button class="btn-message" onclick="requireLogin()">💬 Message</button>
-                        </div>
-                    </div>
-                </div>
+<!-- SUCCESS STORIES -->
+<section id="success" class="hidden">
+  <div class="container">
+    <h1>Success Stories</h1>
 
-                <div class="profile-card">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Rachel, 26</h3>
-                        <p>Marketing Specialist | Boston, MA</p>
-                        <p class="profile-bio">Creative soul with traditional values. I play guitar, love the outdoors, and can't wait to build a family with the right person. Looking for genuine connection and shared goals.</p>
-                        <div class="profile-tags">
-                            <span class="tag">Traditional values</span>
-                            <span class="tag">Musician</span>
-                            <span class="tag">Outdoorsy</span>
-                            <span class="tag">Marriage-minded</span>
-                        </div>
-                        <div class="profile-actions">
-                            <button class="btn-like" onclick="requireLogin()">❤️ Like</button>
-                            <button class="btn-message" onclick="requireLogin()">💬 Message</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="grid" style="margin-top:2rem">
+      <div class="card">
+        <h3>Sarah & Michael</h3>
+        <p>Met with intention. Married with clarity.</p>
+      </div>
+      <div class="card">
+        <h3>Emma & David</h3>
+        <p>Shared values turned into lifelong commitment.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="profile-card">
-                    <div class="profile-img">👩</div>
-                    <div class="profile-info">
-                        <h3>Sarah, 28</h3>
-                        <p>Software Developer | Somerville, MA</p>
-                        <p class="profile-bio">Tech professional who values work-
+<footer>
+  <p>© 2026 Eternal Bonds — Built for the future</p>
+</footer>
+
+<script>
+function showPage(page){
+  document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
+  document.getElementById(page).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
