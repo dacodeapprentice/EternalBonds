@@ -208,6 +208,7 @@ section{padding:4rem 0;min-height:60vh}
   padding:1.5rem;
   box-shadow:0 4px 12px rgba(0,0,0,0.06);
   transition:all 0.3s;
+  width:100%; /* Ensure cards fill their grid cells */
 }
 
 .card:hover{
@@ -432,6 +433,13 @@ footer a:hover{text-decoration:underline}
   .mobile-toggle{display:block}
   .grid-3,.grid-4{grid-template-columns:1fr}
   .btn-group{flex-direction:column}
+  
+  /* Additional mobile adjustments */
+  .container{padding:0 0.5rem}
+  section{padding:2rem 0}
+  .card{padding:1rem}
+  .form-input{padding:0.6rem 0.8rem}
+  .modal-content{padding:1.5rem}
 }
 </style>
 </head>
@@ -623,39 +631,39 @@ footer a:hover{text-decoration:underline}
       <form id="profileForm" onsubmit="saveProfile(event)">
         <div class="grid" style="grid-template-columns:1fr 1fr;gap:1.5rem">
           <div class="form-group">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-input" id="profileName" required>
+            <label class="form-label" for="profileName">Full Name</label>
+            <input type="text" class="form-input" id="profileName" required aria-required="true">
           </div>
           <div class="form-group">
-            <label class="form-label">Age</label>
-            <input type="number" class="form-input" id="profileAge" min="18" max="100" required>
+            <label class="form-label" for="profileAge">Age</label>
+            <input type="number" class="form-input" id="profileAge" min="18" max="100" required aria-required="true">
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Location (City, Country)</label>
-          <input type="text" class="form-input" id="profileLocation" placeholder="e.g., Porto, Portugal" required>
+          <label class="form-label" for="profileLocation">Location (City, Country)</label>
+          <input type="text" class="form-input" id="profileLocation" placeholder="e.g., Porto, Portugal" required aria-required="true">
         </div>
 
         <div class="form-group">
-          <label class="form-label">About Me (500+ characters for full coins)</label>
-          <textarea class="form-input" id="profileBio" rows="6" placeholder="Tell your story, values, personality, what makes you unique..." required></textarea>
+          <label class="form-label" for="profileBio">About Me (500+ characters for full coins)</label>
+          <textarea class="form-input" id="profileBio" rows="6" placeholder="Tell your story, values, personality, what makes you unique..." required aria-required="true"></textarea>
           <small style="color:var(--muted)"><span id="bioCount">0</span>/500 characters</small>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Interests & Hobbies</label>
-          <input type="text" class="form-input" id="profileInterests" placeholder="Reading, Cooking, Travel, Music..." required>
+          <label class="form-label" for="profileInterests">Interests & Hobbies</label>
+          <input type="text" class="form-input" id="profileInterests" placeholder="Reading, Cooking, Travel, Music..." required aria-required="true">
         </div>
 
         <div class="form-group">
-          <label class="form-label">Family Goals & Vision</label>
-          <textarea class="form-input" id="profileGoals" rows="4" placeholder="Share your vision for family life, number of children, values you want to pass on..." required></textarea>
+          <label class="form-label" for="profileGoals">Family Goals & Vision</label>
+          <textarea class="form-input" id="profileGoals" rows="4" placeholder="Share your vision for family life, number of children, values you want to pass on..." required aria-required="true"></textarea>
         </div>
 
         <div class="form-group">
-          <label class="form-label">What are you looking for in a partner?</label>
-          <textarea class="form-input" id="profileLooking" rows="3" placeholder="Describe the qualities, values, and characteristics important to you..." required></textarea>
+          <label class="form-label" for="profileLooking">What are you looking for in a partner?</label>
+          <textarea class="form-input" id="profileLooking" rows="3" placeholder="Describe the qualities, values, and characteristics important to you..." required aria-required="true"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary w-full">
@@ -805,12 +813,12 @@ footer a:hover{text-decoration:underline}
         <h3 style="margin-bottom:1rem">Create New Discussion</h3>
         <form onsubmit="postCommunity(event)">
           <div class="form-group">
-            <label class="form-label">Topic Title</label>
-            <input type="text" class="form-input" placeholder="Enter discussion topic..." required>
+            <label class="form-label" for="topicTitle">Topic Title</label>
+            <input type="text" class="form-input" id="topicTitle" placeholder="Enter discussion topic..." required aria-required="true">
           </div>
           <div class="form-group">
-            <label class="form-label">Your Thoughts</label>
-            <textarea class="form-input" rows="5" placeholder="Share your insights, questions, or experiences..." required></textarea>
+            <label class="form-label" for="yourThoughts">Your Thoughts</label>
+            <textarea class="form-input" id="yourThoughts" rows="5" placeholder="Share your insights, questions, or experiences..." required aria-required="true"></textarea>
           </div>
           <button type="submit" class="btn btn-primary w-full">
             <i class="fas fa-paper-plane"></i> Post & Earn 20 Coins
@@ -841,8 +849,8 @@ footer a:hover{text-decoration:underline}
       <h2 style="margin-bottom:1rem">Browse Profiles</h2>
       <div style="display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
         <div class="form-group" style="margin:0;flex:1;min-width:200px">
-          <label class="form-label">Age Range</label>
-          <select class="form-input">
+          <label class="form-label" for="ageRange">Age Range</label>
+          <select class="form-input" id="ageRange">
             <option>18-25</option>
             <option>26-35</option>
             <option>36-45</option>
@@ -850,8 +858,8 @@ footer a:hover{text-decoration:underline}
           </select>
         </div>
         <div class="form-group" style="margin:0;flex:1;min-width:200px">
-          <label class="form-label">Location</label>
-          <input type="text" class="form-input" placeholder="Enter city...">
+          <label class="form-label" for="locationSearch">Location</label>
+          <input type="text" class="form-input" id="locationSearch" placeholder="Enter city...">
         </div>
         <div style="display:flex;align-items:flex-end">
           <button class="btn btn-primary">
@@ -871,16 +879,16 @@ footer a:hover{text-decoration:underline}
       
       <form onsubmit="submitCupid(event)">
         <div class="form-group">
-          <label class="form-label">Suggest Match To</label>
-          <input type="text" class="form-input" placeholder="User email or name" required>
+          <label class="form-label" for="suggestMatchTo">Suggest Match To</label>
+          <input type="text" class="form-input" id="suggestMatchTo" placeholder="User email or name" required aria-required="true">
         </div>
         <div class="form-group">
-          <label class="form-label">Suggested Profile</label>
-          <input type="text" class="form-input" placeholder="Profile ID or name" required>
+          <label class="form-label" for="suggestedProfile">Suggested Profile</label>
+          <input type="text" class="form-input" id="suggestedProfile" placeholder="Profile ID or name" required aria-required="true">
         </div>
         <div class="form-group">
-          <label class="form-label">Why This Match?</label>
-          <textarea class="form-input" rows="3" placeholder="Explain your reasoning—shared values, interests, goals..." required></textarea>
+          <label class="form-label" for="whyThisMatch">Why This Match?</label>
+          <textarea class="form-input" id="whyThisMatch" rows="3" placeholder="Explain your reasoning—shared values, interests, goals..." required aria-required="true"></textarea>
         </div>
         <button type="submit" class="btn btn-primary w-full" style="background:var(--purple)">
           <i class="fas fa-magic"></i> Submit Suggestion & Earn 100 Coins
@@ -915,7 +923,8 @@ footer a:hover{text-decoration:underline}
         </div>
         <form onsubmit="sendMessage(event)">
           <div class="form-group" style="margin:0">
-            <textarea id="messageInput" class="form-input" rows="3" placeholder="Write a meaningful message (50+ characters)..." required></textarea>
+            <label class="form-label" for="messageInput">Your Message</label>
+            <textarea id="messageInput" class="form-input" rows="3" placeholder="Write a meaningful message (50+ characters)..." required aria-required="true"></textarea>
             <small style="color:var(--muted)"><span id="msgCount">0</span>/50 characters min</small>
           </div>
           <button type="submit" class="btn btn-primary w-full" style="margin-top:1rem">
@@ -1019,12 +1028,12 @@ footer a:hover{text-decoration:underline}
     <h2>Welcome Back</h2>
     <form onsubmit="login(event)">
       <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
+        <label class="form-label" for="email">Email</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="your@email.com" required aria-required="true">
       </div>
       <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-input" name="password" placeholder="••••••••" required>
+        <label class="form-label" for="password">Password</label>
+        <input type="password" class="form-input" id="password" name="password" placeholder="••••••••" required aria-required="true">
       </div>
       <button type="submit" class="btn btn-primary w-full">
         <i class="fas fa-sign-in-alt"></i> Login
@@ -1045,16 +1054,16 @@ footer a:hover{text-decoration:underline}
     <h2>Begin Your Journey</h2>
     <form onsubmit="signup(event)">
       <div class="form-group">
-        <label class="form-label">Full Name</label>
-        <input type="text" class="form-input" name="name" placeholder="John Doe" required>
+        <label class="form-label" for="name">Full Name</label>
+        <input type="text" class="form-input" id="name" name="name" placeholder="John Doe" required aria-required="true">
       </div>
       <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
+        <label class="form-label" for="email">Email</label>
+        <input type="email" class="form-input" id="email" name="email" placeholder="your@email.com" required aria-required="true">
       </div>
       <div class="form-group">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-input" name="password" placeholder="••••••••" minlength="6" required>
+        <label class="form-label" for="password">Password</label>
+        <input type="password" class="form-input" id="password" name="password" placeholder="••••••••" minlength="6" required aria-required="true">
       </div>
       <button type="submit" class="btn btn-primary w-full">
         <i class="fas fa-heart"></i> Create Account & Get 50 Coins
@@ -1069,7 +1078,7 @@ footer a:hover{text-decoration:underline}
 <footer>
   <p>© 2026 Eternal Bonds — Built with love in Porto 💚</p>
   <p style="margin-top:0.5rem">
-    <a href="https://github.com/yourusername/EternalBonds" target="_blank">
+    <a href="https://github.com/yourusername/EternalBonds" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-code-branch"></i> View on GitHub
     </a>
   </p>
